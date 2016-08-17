@@ -214,60 +214,60 @@ def release(key):
   win32api.keybd_event(keys[key], 0, win32con.KEYEVENTF_KEYUP, 0)
 
 # WEB
-iterations = 0; # repeat however many times needed
+# iterations = 0; # repeat however many times needed
 
-for i in range (0, iterations):
-  webbrowser.open_new_tab('https://bing.com')
+# for i in range (0, iterations):
+#   webbrowser.open_new_tab('https://bing.com')
 
-  # Add an arbitrary delay before typing each word
-  time.sleep(5) 
+#   # Add an arbitrary delay before typing each word
+#   time.sleep(5) 
 
-  # Get a random index of the word array
-  index = random.randint(0, iterations - 1)
+#   # Get a random index of the word array
+#   index = random.randint(0, iterations - 1)
 
-  # Split the words string into characters
-  characters = list(words[index])
+#   # Split the words string into characters
+#   characters = list(words[index])
 
-  # Type each character of the word
-  for k in range (0, len(characters)):
-    press_and_release(characters[k])
+#   # Type each character of the word
+#   for k in range (0, len(characters)):
+#     press_and_release(characters[k])
 
-  press_and_release('enter')
-  time.sleep(2.5)
-  hold('ctrl')
-  time.sleep(.1) 
-  hold('w')
-  time.sleep(.1)
-  release('ctrl')
-  time.sleep(.1) 
-  release('w')
-  time.sleep(.1)
+#   press_and_release('enter')
+#   time.sleep(2.5)
+#   hold('ctrl')
+#   time.sleep(.1) 
+#   hold('w')
+#   time.sleep(.1)
+#   release('ctrl')
+#   time.sleep(.1) 
+#   release('w')
+#   time.sleep(.1)
 
 # MOBILE 
-iterations = 30; # repeat however many times needed
+# Please spoof the user agent before running this script (Ctrl + Shift + M)
+iterations = 30; # repeat however many times as needed
 
 for i in range (0, iterations):
   webbrowser.open_new_tab('https://bing.com')
+  time.sleep(2)
 
-  time.sleep(5)  
+  # Hold shortcut keys to open console
+  time.sleep(.1)  
   hold('ctrl')
   time.sleep(.1) 
   hold('shift')
   time.sleep(.1) 
   hold('i')
-  time.sleep(.1) 
+
+  # Release shortcut keys
+  time.sleep(.1)  
   release('ctrl')
   time.sleep(.1) 
   release('shift')
   time.sleep(.1) 
   release('i')
-  time.sleep(.1) 
 
-  time.sleep(3)
-
-  press_and_release('F5')
-
-  time.sleep(3)
+  time.sleep(4)
 
   press_and_release('F6')
 
@@ -275,26 +275,15 @@ for i in range (0, iterations):
 
   # Type each character of the word
   for k in range (0, len(characters)):
+    time.sleep(.5)
     press_and_release(characters[k])
 
   press_and_release('enter')
 
-  time.sleep(3)
+  time.sleep(4)
 
   press_and_release('tab')
 
-  # To change user agent
-  # hold('ctrl')
-  # time.sleep(.1) 
-  # hold('shift')
-  # time.sleep(.1) 
-  # hold('m')
-  # time.sleep(.1) 
-  # release('ctrl')
-  # time.sleep(.1) 
-  # release('shift')
-  # time.sleep(.1) 
-  # release('m')
 
   # Get a random index of the word array
   index = random.randint(0, iterations - 1)
@@ -305,6 +294,7 @@ for i in range (0, iterations):
   # Type each character of the word
   for k in range (0, len(characters)):
     press_and_release(characters[k])
+    time.sleep(.3)
 
   press_and_release('enter')
   time.sleep(2.5)
@@ -316,4 +306,6 @@ for i in range (0, iterations):
   time.sleep(.1) 
   release('w')
   time.sleep(.1)
+
+  time.sleep(3)
 
