@@ -1,12 +1,12 @@
 """
-May take a while - go get a snack
+Depends on ucd_ug_major_links.txt
 """
 
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
-src = open('major_links.txt', 'r')
-dest = open('major_advisor_phone_numbers.txt', 'wb')
+src = open('ucd_ug_major_links.txt', 'r')
+dest = open('ucd_ug_advisor_phone_numbers.txt', 'wb')
 
 for line in src:
   page = urlopen(line)

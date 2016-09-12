@@ -1,8 +1,7 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
-# dest = open('major_names.txt', 'wb')
-dest = open('major_links.txt', 'wb')
+dest = open('ucd_ug_major_links.txt', 'wb')
 page = urlopen('https://www.ucdavis.edu/majors')
 soup = BeautifulSoup(page, 'html.parser')
 
@@ -14,9 +13,6 @@ for span in soup.find_all('span', class_='field-content'):
     continue
 
   link = span.contents[0]
-  # Major names
-  # dest.write(link.string.encode('utf-8') + ('\n').encode('utf-8'))
-  # Major links
   dest.write(('https://www.ucdavis.edu').encode('utf-8') + link['href'].encode('utf-8') + ('\n').encode('utf-8'))
   
 dest.close()
